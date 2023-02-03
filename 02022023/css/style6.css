@@ -1,0 +1,18 @@
+.contactUs{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 44%;
+    margin-right: 44%;
+    background-image: url(images.png);
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    border-radius: 20px;
+    background-color: aqua;
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    border: 1px solid black;
+}
+.blue{
+    background-color: rgb(102, 164, 181);
+}
+.green{
+    background-color: rgb(75, 138, 75);
+}
+.silver{
+    background-color: silver;
+}
+.red{
+    background-color: rgb(157, 62, 62);
+}
+.yellow{
+    background-color: rgb(141, 141, 75);
+}

@@ -1,0 +1,32 @@
+.container{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.photo{
+    margin-right: 25px;
+    box-shadow: 0 4px 8px 0 rgba(161, 159, 159, 0.2), 0 6px 20px 0 rgba(160, 159, 159, 0.19);
+}
+hr{
+    width: 60%;
+}
+.para{
+    color: gray;
+    width: 70%;
+    margin-left: 110px;
+}
+img{
+    height: 95px;
+    width: 95px;
+    border-radius: 50%;
+}
+.status{
+    color:rgb(138, 127, 127);
+    margin-top: 5px;
+    font-size: small;
+}
