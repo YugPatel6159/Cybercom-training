@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/03022023/css/style.css" />
+</head>
+
+<body>
+    <div class="head_main">
+        <p class="text_info" >information</p>
+        <br />
+        <h1 class="heading blueColor">Health Care information<sup>+</sup></h1>
+        <br />
+        <p>Complete all answers in capital letters</p>
+    </div>
+        <form action="">
+
+    <fieldset class="borderColor">
+            <h3 class="blueColor">EMPLOYEE STATEMENT</h3>
+            <label for="grp_contact">Group Contract Number</label>
+            <input class="input_border" type="text" name="grp_contact" required />
+            <label for="certi_num">Certificate Number</label>
+            <input class="input_border" type="text" name="certi_num" id="certi_num" required /><br />
+            <label for="emp_lname">Employee last name and given name</label>
+            <input class="input_border" type="text" name="emp_lname" id="emp_lname" required />
+            <label for="date">Date of birth(DD/MM/YY)</label>
+            <input class="input_border" type="date" name="date" id="date" required /><br />
+            <label for="emp_add">Employee address</label>
+            <input class="input_border" type="text" name="emp_add" id="emp_add" required /><br />
+            <span class="blueColor">Would you like your claims and payments deposited into your bank
+                account?</span><br />
+            <input type="checkbox" name="yes" id="yes" />Yes
+            <label for="checkbox">I have included a valid cheque</label><br />
+            <span class="noteSpan silverColor">Please note that only a one time valid cheque is required. If you
+                change your banking information, a new valid cheque will be
+                needed</span>
+            </fieldset>
+            <fieldset class="borderColor">
+                <h3 class="blueColor" >COORDINATION OF BENEFITS</h3>
+                <span>1.Does you're spouse and/or children have coverage under any other medical plan or contract?</span><br>
+                <input type="radio" name="medical" id="medical_1" onclick="first_radio()">
+                <label for="medical">Yes</label> 
+                <input type="radio" name="medical" id="medical_0" onclick="first_radio()">
+                <label for="medical">No</label><br>
+                <div id="result"></div>
+                <span>2. is any expense the result of an accident?</span><br>
+                <input type="radio" name="accident" id="accident_1" onclick="second_radio()">
+                <label for="accident">Yes</label> 
+                <input type="radio" onclick="second_radio()" name="accident" id="accident_0">
+                <label for="accident">No</label>
+                <div id="result2" ></div>
+            </fieldset>
+
+            <h3 class="blueColor">DRUGS, VISION CARE, PARAMEDICAL SERVICES AND OTHER-PATIENT INFORMATION</h3>
+            <table id="myTable">
+                <tr>
+                    <th>Patient's name</th>
+                    <th>Date of birth</th>
+                    <th>Relationship to plan member</th>
+                    <th>Total charge</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="" id="inp1"></td>
+                    <td><input type="date" name="" id="inp2"></td>
+                    <td><input type="text" name="" id="inp3"></td>
+                    <td><input type="text" name="" id="inp4"></td>
+                </tr>
+            </table>
+            <button class="add_button" onclick="addNewField()">Add Field</button>
+
+        </form>
+        <script src="/03022023/javascript/script.js"></script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 .container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center;;
 }
 .inputs{
     margin: 10px 10px;
@@ -14,4 +14,7 @@
     color: silver;
     position: absolute;
     margin-left: 70px;
+}
+fieldset{
+    background-color: antiquewhite;
 }

@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style8.css" />
+    <link rel="stylesheet" href="/02022023/css/style8.css"/>
+    <script src="/02022023/js/script.js"></script>
   </head>
   <body>
     <div class="container">
       <fieldset>
         <h4>Personal Information</h4>
-        <form action="information.php" method="post">
+        <form action="" class="form1" autocomplete="off">
           <label for="first_name">First Name:</label>
           <input
             type="text"
@@ -44,9 +45,9 @@
           </select>
 
           <h4>Account Information</h4>
-          <label for="email">Email:</label>
-          <input
-            type="email"
+          <label for="email" >Email:</label>
+          <input 
+            type="text"
             class="inputs"
             name="email"
             id="email"
@@ -56,7 +57,7 @@
           <br />
           <label for="re_email">Re-type Email:</label>
           <input
-            type="email"
+            type="text"
             class="inputs"
             name="retype_email"
             id="retype_email"
@@ -90,8 +91,8 @@
             required
           >
             <option value="choose_que">Choose a security question</option>
-            <option value="pet_name">Pet Name</option>
-            <option value="school_name">School Name</option></select
+            <option value="Pet">Pet Name</option>
+            <option value="School">School Name</option></select
           ><br />
           <label for="sec_ans">Security Answer:</label>
           <input
@@ -149,10 +150,43 @@
             <option value="telephone">telephone</option></select
           ><br />
           <span class="notes">No spaces or dashes</span> <br />
-          <input type="submit" name="submit" id="submit" />
+          <input type="submit" name="submit" id="submit" onclick="emailCheck(); storeData();" />
           <input type="reset" name="reset" id="reset" />
         </form>
       </fieldset>
     </div>
+    <button id="btn" onclick="showData()">Show Data</button>
+    <table id="dataShow">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date Of Birth</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Security question</th>
+        <th>Security answer</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Optional zip code</th>
+        <th>Phone Number</th>
+      </tr>
+      <tr>
+        <td id="td1"> </td>
+        <td id="td2"> </td>
+        <td id="td3"> </td>
+        <td id="td4"> </td>
+        <td id="td5"> </td>
+        <td id="td6"> </td>
+        <td id="td7"> </td>
+        <td id="td8"> </td>
+        <td id="td9"> </td>
+        <td id="td10"> </td>
+        <td id="td11"> </td>
+        <td id="td12"> </td>
+        <td id="td13"> </td>
+      </tr>
+    </table>
   </body>
 </html>

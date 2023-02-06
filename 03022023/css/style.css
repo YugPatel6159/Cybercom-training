@@ -1,0 +1,40 @@
+table,tr,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-color: rgb(7, 189, 235);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.input_border{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+}
+.text_info{
+    padding: 10px 10px;
+    color: gray;
+    font-size:larger;
+    font-family: 'Times New Roman', Times, serif;
+}
+#inp3{
+    width:100%;
+}
+.blueColor{
+    color: rgb(14, 198, 240);
+}
+.silverColor{
+    color: silver;
+}
+.noteSpan{
+    font-size: small;
+}
+.head_main{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+}

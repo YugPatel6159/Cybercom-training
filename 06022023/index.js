@@ -1,0 +1,1 @@
+document.getElementById("para1").innerHTML="this is my updated paragraph";
