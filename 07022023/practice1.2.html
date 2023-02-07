@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Question1</h1>
+    <span id="info1"></span>
+    <span id="info2"></span>
+
+    <h1>Question2</h1>
+    <span id="total"></span>
+    <script>
+        // question 1
+        const a = {
+            name:"Yug",
+            address:"bhavnagar",
+            age:"20"
+        };
+        document.getElementById("info1").innerHTML=JSON.stringify(a) + "<br>";
+
+            a.name="Rutvik"
+            a.address="Viramgam"
+            a.age="30"
+
+        document.getElementById("info2").innerHTML=JSON.stringify(a);
+
+        //question 2
+
+        const productInfo = {
+            name:"pen",
+            price:"5",
+            quantity:"1000"
+        }
+        totalPrice(productInfo.quantity,productInfo.price);
+        function totalPrice(quantity,price){
+            var total = quantity * price;
+            var finalTotal = document.getElementById("total");
+            document.getElementById("total").innerHTML='total cost of pen'+quantity+'&nbsp'+'are'+'&nbsp'+total; 
+        }
+
+        // question 3
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="que1">
+        <h1>Question 1</h1>
+        <p id="paragraph">this is written by paragraph</p>
+        <button id="btn" onclick="changePara()">click here</button>
+    </div>
+    <div class="que2">
+        <h1>Question2</h1>
+        <ul id="list">
+            <li>ABB</li>
+            <li>ABC</li>
+            <li>ABD</li>
+        </ul>
+        <input type="text" name="inpText" id="inpText" />
+        <button id="add">Add</button>
+        <button id="remove">Remove</button>
+    </div>
+    <div class="que3">
+        <h1>Question3</h1>
+        <p id="para1" class="paragraph">this is first paragraph</p>
+        <button id="btn1" onclick="changeText(1)" class="buttons">Button1</button><br />
+        <p id="para2" class="paragraph">this is second paragraph</p>
+        <button id="btn2" onclick="changeText(2)">Button2</button><br />
+        <p id="para3" class="paragraph">this is third paragraph</p>
+        <button id="btn3" onclick="changeText(3)">Button3</button><br />
+    </div>
+
+    <h1>Question:4</h1>
+
+    <form action="" onsubmit="return emailValidation()">
+        <span id="error1"style="color:red"></span><br>
+
+        First Name:
+        <input type="text" name="firstName" id="firstName"required>
+        <br>
+        Last Name:
+        <input type="text" name="lastName" id="lastName"required>
+        <br>
+        DOB
+        <input type="date" name="dateOfBirth" id="dateOfBirth"required><br>
+        Address:
+        <input type="text" name="address" id="address"required><br>
+        email:
+        <input type="text" name="email" id="email" ><br>
+        Password:
+        <input type="password" name="password" id="password" ><br>
+        <input type="submit" value="submit" >
+    </form>
+    <div class="question5">
+        <img src="/06022023/images/image1.jpg" width="50px" height="50px
+        " id="img1" alt="image1" onclick="imageChange(1)">
+        <img src="/06022023/images/image2.jpg" width="50px"
+        height="50px" id="img2" alt="image2" onclick="imageChange(2)">
+    </div>
+        
+    <!-- Script File -->
+    <script>
+        function changePara() {
+            let changePara = document.getElementById("paragraph");
+            changePara.innerHTML = 'this is changed using button';
+        }
+        //this is for second question
+        const addInput = document.querySelector('#inpText');
+        const addBtn = document.querySelector('#add');
+        addBtn.addEventListener('click', () => {
+            const ul = document.querySelector('ul');
+            const li = document.createElement('li');
+            ul.appendChild(li);
+            li.innerHTML = addInput.value;
+        });
+
+        addBtn2 = document.querySelector('#remove');
+        addBtn2.addEventListener('click', () => {
+            var a = document.getElementsByTagName("li");
+            var length = a.length - 1;
+            a[length].remove();
+        });
+
+        // this is for question3
+        function changeText(number) {
+            const para = document.getElementsByClassName("paragraph");
+            para[number - 1].innerHTML = "changed";
+        }
+
+        //this is for question 4
+        function emailValidation() {
+            var email = document.getElementById("email").value;
+            if (!/[^\s@]+@[^\s@]+\.[^\s@]+/gi.test(email)) {
+                document.getElementById("error1").innerHTML = "Invalid Email";
+                return false;
+
+            }
+            var truePassword = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+            var password = document.getElementById("password").value;
+            if (!truePassword.test(password)) {
+                document.getElementById("error1").innerHTML = "Invalid Password";
+                return false;
+            }
+            return true;
+        }
+        //question 5
+
+        function imageChange(number){
+            var img = document.getElementsByTagName("img");
+            img[number-1].src="/06022023/images/image3.jpg"
+        }
+    </script>
+</body>
+
+</html>
