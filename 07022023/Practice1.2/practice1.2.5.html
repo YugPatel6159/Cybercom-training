@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>question5</h1>
+    <p id="personInfo"></p>
+    <script>
+        const person = {
+            name:"Yug",
+            age: 21
+        }
+        const address = {
+            address:"Bhavnagar"
+        }
+        personFun(person,address);
+        function personFun(person, address){
+            const personMerge = {...person, ...address};
+            document.getElementById("personInfo").innerHTML=
+            'Name:' + personMerge.name + '<br>'+
+            'Age:' + personMerge.age + '<br>'+
+            'Address:' + personMerge.address + '<br>';
+
+        }
+    </script>
+</body>
+</html>
