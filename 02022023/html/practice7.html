@@ -10,7 +10,7 @@
 <body>
     <fieldset>
     <table>
-        <form action="success.html">
+        <form action="success.html" id="myForm">
 
             <legend>Your address</legend>
             <tr>
@@ -126,6 +126,8 @@
 </form>
     <script>
         function onClick(){
+            let a = myForm.serialize();
+            console.log(a.city.value); 
             window.location.href="success.html";
         }
     </script>

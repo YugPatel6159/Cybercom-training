@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/cybercom evaluation test/css/registration.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h2>Registration</h2>
+      <form action="" id="registerForm">
+        <div class="inputArea">
+          <input
+            type="text"
+            class="inp"
+            name="name"
+            id="name"
+            placeholder="Name"
+            required
+          /><br />
+          <span id="errNewsEmail" class="errInp"></span>
+          <input
+            type="text"
+            class="inp"
+            name="regEmail"
+            id="regEmail"
+            placeholder="Email"
+          /><br />
+          <span id="errNewsPass" class="errInp"></span>
+          <input
+            type="password"
+            class="inp"
+            name="regPassword"
+            id="regPassword"
+            placeholder="Password"
+            required
+          /><br />
+          <span id="errNewsRePass" class="errInp"></span>
+          <input
+            type="password"
+            class="inp"
+            name="rePassword"
+            id="rePassword"
+            placeholder="Confirm Password"
+            required
+          /><br />
+          <select
+            name="selectCity"
+            class="inp"
+            id="selectCity"
+            value="selectCity"
+            required
+          >
+            <option value="selectCity">select City</option>
+            <option value="bhavnagar">Bhavnagar</option>
+            <option value="surat">surat</option>
+            <option value="ahmedabad">ahmedabad</option></select
+          ><br />
+          <select name="selectState" class="inp" id="selectState" required>
+            <option value="selectState">Select State</option>
+            <option value="gujarat">Gujarat</option>
+            <option value="rajashthan">rajashthan</option>
+            <option value="delhi">Delhi</option></select
+          ><br />
+          <span id="errNewsCheck" class="errInp"></span>
+          <input type="checkbox" onclick="registerEnable()" name="tAndC" id="tAndC"  />
+          <label for="tAndC" >Terms & Condition Apply</label><br />
+          <input
+            class="inp btn"
+            type="button"
+            name="button"
+            id="regButton"
+            value="Register"
+            onclick="userReg()"
+          /><br />
+          <span id="adminAlReg"></span><br />
+          <input
+            class="inp btn"
+            type="button"
+            name="loginBtn"
+            id="loginBtn"
+            value="Login"
+            onclick="userLogin()"
+          /><br />
+        </div>
+      </form>
+    </div>
+    <script src="/cybercom evaluation test/js/registration.js"></script>
+  </body>
+</html>

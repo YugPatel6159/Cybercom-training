@@ -1,0 +1,38 @@
+<!-- 
+function calcAge(dob) { 
+    var msDiff = Date.now() - dob.getTime();
+    // console.log(msDiff);
+    var age_dt = new Date(msDiff); 
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
+
+console.log(calcAge(new Date(2002, 04, 21))); -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>case 4</h2>
+    <input type="date" id="txtDOB" class="dob" />
+
+    <button id="btnCalculate" onclick="calcAge();">Calculate Age</button>
+    <br />
+    <div id="output"></div>
+    <script>
+      function calcAge() {
+        var dob = document.getElementById('txtDOB').value;
+        let dateOfBirth = new Date(dob);
+        var msDiff = Date.now() - dateOfBirth;
+        // console.log(msDiff);
+        var age_dt = new Date(msDiff);
+        var output = Math.abs(age_dt.getUTCFullYear() - 1970);
+        document.getElementById('output').innerHTML=output;
+      }
+
+    </script>
+  </body>
+</html>

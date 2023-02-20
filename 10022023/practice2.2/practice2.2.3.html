@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+        
+        <label for="string">Enter string:</label>
+        <input type="text" name="string" id="string" /><br />
+    </form>
+        <input
+        type="button"
+        name="btn"
+        id="btn"
+        value="convert"
+        onclick="convertStr()"
+        />
+        <div id="output"></div>
+
+    <script>
+        let convertStr = () => {
+          var a = document.getElementById("string").value;
+          let out = a.split("");
+          console.log(out);
+        };
+        // document.getElementById("output").innerHTML = convertStr(a);
+    </script>
+  </body>
+</html>

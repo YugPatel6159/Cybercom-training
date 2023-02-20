@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/cybercom evaluation test/css/users.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="sideNavBar">
+        <span id="hello">Hello,</span>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#">Users</a>
+        <a href="loginsession.html">Login Session</a>
+        <a href="login.html">Logout</a>
+      </div>
+      <div class="mainContent">
+        <h3 id="heading">Add User</h3>
+        <div class="content">
+          <form action="">
+            <input type="text" name="nameU" id="nameU" placeholder="Name" required />
+            <input type="text" name="emailU" id="emailU" placeholder="Email" required/>
+            <input
+              type="password"
+              name="passU"
+              id="passU"
+              placeholder="Password"
+              required
+            />
+            <input
+              type="date"
+              name="dateU"
+              id="dateU"
+              placeholder="BirthDate"
+              required
+            /><br />
+            <button id="addBtn" onclick="addUser()">Add User</button
+            ></form><br /><br />
+            <h3>Users List</h3>
+            <div class="tableU">
+                <table id="userTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>BirthDate</th>
+                        <th>Age</th>
+                        <th>Actions</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="/cybercom evaluation test/js/users.js"></script>
+  </body>
+</html>

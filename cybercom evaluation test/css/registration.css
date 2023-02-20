@@ -1,0 +1,36 @@
+.inputArea{
+    text-align: center;
+    border: 1px solid black;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: bisque;
+}
+
+h2{
+    text-align: center;
+}
+
+.inp{
+    margin:10px 5px;
+    width: 15vw;
+}
+
+.btn{
+    background-color: orange;
+    color:white;
+    font-size: 10px;
+    padding: 7px;
+    border: 0px;
+}
+
+.or{
+    font-size: 12px;
+}
+
+#errNews {
+    display: none;
+    color: red;
+    font-size: small;
+    text-align: center;
+}
