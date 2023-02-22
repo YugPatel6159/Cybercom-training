@@ -29,10 +29,10 @@ Question 2: Write an SQL query to report the device that is
 first logged in for each player. Return the result table in any 
 order.
 */
-
-select player_id, min(device_id) 
+select player_id, device_id from Activity where (player_id, event_date) in
+(select player_id, min(event_date) 
 from Activity
-group by player_id;
+group by player_id);
 
 /*Question 3: Write an SQL query to report for each player and 
 date, how many games played so far by the player. That is, the 
@@ -41,9 +41,8 @@ Check the example for clarity. Return the result table in any
 order.
 */
 
-select player_id
-from Activity
-group by event_date;
+select player_id,
+    event_date, sum(gameS_played) OVER(PARTITION BY player_id ORDER BY event_date) from Activity;
 
 
 

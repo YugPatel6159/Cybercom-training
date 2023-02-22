@@ -1,12 +1,12 @@
 create database practice2case1;
 use practice2case1;
 
-create table Activity (
-player_id int not null,
-device_id int not null,
-event_date date not null,
-games_played int not null,
-primary key(player_id, event_date)
+CREATE TABLE Activity (
+    player_id INT NOT NULL,
+    device_id INT NOT NULL,
+    event_date DATE NOT NULL,
+    games_played INT NOT NULL,
+    PRIMARY KEY (player_id , event_date)
 );
 
 insert into Activity values 
@@ -20,9 +20,11 @@ insert into Activity values
 for each player. Return the result table in any order.
 */
 
-select player_id, min(event_date) as first_login 
-from Activity
-group by player_id;
+SELECT 
+    player_id, MIN(event_date) AS first_login
+FROM
+    Activity
+GROUP BY player_id;
 
 /*
 Question 2: Write an SQL query to report the device that is 
@@ -39,7 +41,7 @@ WHERE
         FROM
             Activity
         GROUP BY player_id);
-
+        
 /*Question 3: Write an SQL query to report for each player and 
 date, how many games played so far by the player. That is, the 
 total number of games played by the player until that date. 
@@ -47,11 +49,6 @@ Check the example for clarity. Return the result table in any
 order.
 */
 
-select player_id
-from Activity
-group by event_date;
-
-
-
-
+select player_id,
+    event_date, sum(gameS_played) OVER(PARTITION BY player_id ORDER BY event_date) from Activity;
  
