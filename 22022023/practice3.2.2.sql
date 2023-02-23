@@ -44,9 +44,10 @@ VALUES
     (5, 5, 1, '2022-02-05 16:30:00');
     
     
-select u.name as user_name, count(p.id) as posts , 
-count(l.post_id) from users u left join posts p on u.id = p.user_id 
+select u.name as user_name, count(p.id) as posts, count(l.post_id)
+from users u 
+left join posts p on u.id = p.user_id 
 left join likes l on p.id = l.post_id 
-where u.created_at between '2019-01-01' and '2022-12-31' 
- group by u.name order by l.created_at desc limit 5;
+where year(u.created_at) = 2022  
+group by u.name order by l.created_at desc;
  
