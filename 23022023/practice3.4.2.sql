@@ -1,3 +1,4 @@
+use practice1;
 CREATE TABLE employeesdb (
   empID INT AUTO_INCREMENT PRIMARY KEY,
   firstName VARCHAR(255) NOT NULL,
@@ -90,8 +91,24 @@ select* from employee_Stats;
 /* Write a query that returns the first and last name of all 
 employees who have the same last name as their manager.
 */
+CREATE TABLE managers (
+  manager_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  hire_date DATE
+);
+INSERT INTO managers (manager_id, first_name, last_name, email, hire_date)
+VALUES (1, 'John', 'Smith', 'mailto:john.smith@email.com', '2022-01-01'),
+       (2, 'Jane', 'Doe', 'mailto:jane.doe@email.com', '2022-02-01'),
+	   (3, 'David', 'Lee', 'mailto:david.lee@email.com', '2021-10-01'),
+       (4, 'Maria', 'Garcia', 'mailto:maria.garcia@email.com', '2022-03-01');
 
-select firstname, lastname from employeesdb where managerid is not null and lastname in (select lastname from employeesdb where managerid is null);
+select e.firstname, e.lastname from 
+employeesdb e join managers m 
+on e.managerId = m.manager_id 
+where e.managerid is not null 
+and e.lastname in (select last_name from managers);
 
 /*Write a query that returns the top 5 departments with the 
 highest average salary.*/
@@ -101,5 +118,22 @@ select d.deptname , avg(e.salary) from employeesdb e join departments d on e.dep
 /*Write a query that returns the first and last name of 
 all employees who have at least one dependent. Sort the 
 results by last name.*/
-select firstname , lastname from employeesdb where departmentid is not null order by lastname; 
+CREATE TABLE dependents (
+  dependent_id INT PRIMARY KEY,
+  emp_id INT,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  relationship VARCHAR(50),
+  FOREIGN KEY (emp_id) REFERENCES employeesdb(empid)
+);
 
+INSERT INTO dependents (dependent_id, emp_id, first_name, last_name, relationship)
+VALUES
+  (1, 1, 'John', 'Smith', 'Spouse'),
+  (2, 2, 'Emily', 'Smith', 'Child');
+  
+select firstname , lastname from employeesdb where departmentid is not null order by lastname; 
+SELECT e.firstName, e.lastName
+FROM employeesdb e
+JOIN dependents d ON e.empid = d.emp_id
+ORDER BY e.lastName;

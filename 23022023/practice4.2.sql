@@ -83,10 +83,17 @@ LIMIT (select count(*)*0.1 from employees);
 
 /* Write a query to return the salary of each employee for 
 their latest salary entry.*/
-
-select e.name, s.salary from employees e 
-join salaries s using(employeeID)
-where s.Date = (Select max(date) from salaries) 
-group by e.employeeID;
-
  
+SELECT 
+    e.name, s.salary
+FROM
+    salaries s
+        JOIN
+    employees e ON s.employeeID = e.employeeID
+        JOIN
+    (SELECT 
+        employeeID, MAX(date) AS latest_dates
+    FROM
+        salaries
+    GROUP BY employeeID) AS se ON s.employeeID = se.employeeID
+        AND s.date = se.latest_dates;

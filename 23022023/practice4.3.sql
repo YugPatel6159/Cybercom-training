@@ -38,6 +38,7 @@ VALUES (1, 1, 10.50, '2022-02-22 12:00:00', '2022-02-22 12:00:00'),
        (4, 2, 15.99, '2022-02-23 10:00:00', '2022-02-23 10:00:00'),
        (5, 3, 8.75, '2022-02-23 11:00:00', '2022-02-23 11:00:00'),
        (6, 1, 12.50, '2022-02-23 12:00:00', '2022-02-23 12:00:00');
+       
 /*Retrieve the names and email addresses of all users who 
 have placed at least one order.*/
 
@@ -52,7 +53,7 @@ select u.name, sum(o.amount) from orders o join users u on o.user_id = u.id grou
 /* Retrieve the email address of the user who has placed the 
 most orders.
 */
-
+select * from orders;
 select u.email, count(user_id) from users u join orders o on u.id = o.user_id group by o.user_id order by o.user_id desc limit 1;
 
 /* Retrieve the user IDs and the total amount of orders placed 
@@ -65,7 +66,7 @@ select user_id , sum(amount) from orders group by user_id having sum(amount)>25 
 /*Retrieve the number of users who have not placed any 
 orders.
 */
-select u.name from users u left join orders o on u.id = o.user_id where u.id not in (select distinct user_id from orders); 
+select count(u.name) from users u left join orders o on u.id = o.user_id where u.id not in (select distinct user_id from orders) group by u.name; 
 
 /* Update the user with ID 1 to change their email address to 
 "jane.doe@example.com".*/
@@ -77,13 +78,13 @@ where id =1;
 /* Delete all orders placed by users whose email address 
 contains the string "test".
 */
-
-delete from users where id in (select distinct user_id from orders) and email = '%test%';
+set SQL_safe_updates =0;
+delete from users where id in (select distinct user_id from orders) and email like '%test%';
 
  /* Retrieve the total amount of orders placed on each day of 
 the current week, grouped by day.*/
 insert into orders values (7, 1, 12.50, '2023-02-23 12:00:00', '2023-02-23 12:00:00');
-
+insert into orders values (8, 3, 12.50, '2023-02-23 12:00:00', '2023-02-23 12:00:00'),(9, 3, 12.50, '2023-02-23 12:00:00', '2023-02-23 12:00:00'),(10, 3, 12.50, '2023-02-23 12:00:00', '2023-02-23 12:00:00');
 select  sum(amount), day(created_at)
 from orders
 where week(created_at) = week(current_date) 
