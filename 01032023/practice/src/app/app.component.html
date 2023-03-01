@@ -1,0 +1,20 @@
+<!-- <input type="text" [(ngModel)]="text">
+<button (click)="new()">click me</button>
+<p>{{text}}</p>
+<p *ngIf ="title; else para">this will be changed</p>
+<ng-template #para>this is else part</ng-template>
+<p [ngClass]="'outlet'">this is red color</p> -->
+
+<h1>
+  todo list
+</h1>
+<div>
+  <input type="text" #inp placeholder="enter your todo's">
+  <select name="select" #select>
+    <option value="high" default>high</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+  </select>
+  <button (click)="add( inp.value,select.value)">add</button>
+  <p *ngFor = "let i of Array" [ngClass]="i.category">{{i.text}}</p>
+</div> 
