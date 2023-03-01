@@ -1,10 +1,36 @@
-<!-- <input type="text" [(ngModel)]="text">
+<img alt="item" [src]='src'  [ngStyle]="{'width':'50px','height':'50px'}"><br>
+<input type="text" [(ngModel)]="text">
 <button (click)="new()">click me</button>
 <p>{{text}}</p>
 <p *ngIf ="title; else para">this will be changed</p>
 <ng-template #para>this is else part</ng-template>
-<p [ngClass]="'outlet'">this is red color</p> -->
+<p [ngClass]="'outlet'">this is red color</p>
+<p [ngClass]="isSpecial ? 'special' :''">this is special div</p>
+<label for="checkBox1">isUnchange</label>
+<input type="checkbox" name="isUnchanged" #check1 [(ngModel)]="isUnchanged"> <br>
+<label for="checkBox2">canSave</label>
+<input type="checkbox" name="canSave" #check2 [(ngModel)]="canSave"> <br>
+<label for="checkBox3">isSpecial</label>
+<input type="checkbox" name="isSpecial" #check3 [(ngModel)]="isSpecial"> <br>
+<div [ngStyle]="currentStyles">
+  This div is initially italic, normal weight, and extra large (24px).
+</div><br>
+<span [ngClass]="['a1','a2']">hello world</span>
+<span *ngIf="canSave">can save is true</span> <br>
+<span *ngFor= "let i of array">{{i}}</span><br>
+<span *ngFor= "let i of array; let index =index">{{index}}</span><br>
+<ul>
+  <ng-container *ngFor="let item of items">
+    <li *ngIf="item.age">
+      {{ item.name }}
+    </li>
+  </ng-container>
+</ul>
 
+
+<div [ngClass]="'div1'">this is best div ever</div>
+
+<button (click)="setCurrentStyles()">button</button>
 <h1>
   todo list
 </h1>
