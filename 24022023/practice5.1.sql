@@ -75,8 +75,8 @@ order by sum(od.amount) desc;
 -- they have spent on all orders and the total amount they have 
 -- spent on orders made in the last 30 days.
 
-select c.name, sum(o.amount), 
-sum(case when date_sub(current_date,interval 30 day)
+select c.customer_name, sum(o.amount), 
+sum(case when o.order_date >= date_sub(current_date,interval 30 day)
 		 then o.amount else 0 end) as total_spent_in_30_day
 from customers c join orders o 
 using(customer_id)
@@ -107,9 +107,9 @@ group by o.customer_id;
 -- their department in the "employees" table, sorted by department 
 -- ID and then by salary in descending order.
 
-select e.name, e.salary from employees e join department d using(dept_id) 
-where e.salary > (select min(salary) from department where d.dept_id = e.dept_id )
-group by e.dept_id;
+select e.name, e.salary from employees e join departments d using(DepartmentID) 
+where e.salary > (select min(salary) from employees e join departments d using(DepartmentID)where d.DepartmentID = e.DepartmentID )
+group by e.DepartmentID;
 
 -- Write a SQL query to retrieve the names and salaries of the five 
 -- highest paid employees in each department of the "employees" 

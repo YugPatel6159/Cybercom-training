@@ -1,0 +1,22 @@
+<p>{{a}}</p>
+<p>{{title}}</p>
+<ul>
+  <li *ngFor = "let i of numbers">{{i}}</li>
+</ul>
+<ul [style]="style1">
+  <li *ngFor = "let item of user">{{item.name}} and its id:{{item.id}}</li>
+</ul>
+<p>{{title=='basic'}}</p>
+<p>{{myFun()}}</p>
+<p class={{title}}>this tag having class{{title}}</p>
+<!-- <p>{{title='abcd'}}</p> this will give error -->
+<!-- <p>{{typeof title}}</p> this will give error -->
+<!-- <p>{{data++}}</p> this will give error -->
+<button (click) = "userFun('yug')">click here</button>
+<input type="text" #box (keyup)="getData(box.value)" placeholder="enter something">
+<input type="text" #box1 (keydown)="getData(box1.value)" placeholder="enter something">
+<input type="text" #box2 (blur)="getData(box2.value)" placeholder="enter something">
+
+<app-first-comp></app-first-comp>
+<app-first></app-first>
+<router-outlet></router-outlet>

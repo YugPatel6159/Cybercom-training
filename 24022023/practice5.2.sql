@@ -220,4 +220,11 @@ having count( distinct p.product_id)>5;
 -- category. The output should only include employees who have 
 -- made at least one such sale.
 
-SELECT e.employee_name from employees e join orders o using(employee_id) join order_items oi using(order_id) join products1 p using(product_id) join customers c using(customer_id) where p.category='Electronics' group by employee_id having count(distinct p.product_id)>5 ;
+SELECT e.employee_name from employees e 
+join orders o using(employee_id) 
+join order_items oi using(order_id) 
+join products1 p using(product_id) 
+join customers c using(customer_id) 
+where p.category='Electronics' 
+group by employee_id 
+having count(distinct p.product_id)>5 ;
