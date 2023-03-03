@@ -1,10 +1,10 @@
-<img alt="item" [src]='src'  [ngStyle]="{'width':'50px','height':'50px'}"><br>
+<!-- <img alt="item" [src]='src'  [ngStyle]="{'width':'50px','height':'50px'}"><br>
 <input type="text" [(ngModel)]="text">
 <button (click)="new()">click me</button>
 <p>{{text}}</p>
 <p *ngIf ="title; else para">this will be changed</p>
-<ng-template #para>this is else part</ng-template>
-<p [ngClass]="'outlet'">this is red color</p>
+<ng-template #para>this is else part</ng-template> -->
+<!-- <p [ngClass]="'outlet'">this is red color</p>
 <p [ngClass]="isSpecial ? 'special' :''">this is special div</p>
 <label for="checkBox1">isUnchange</label>
 <input type="checkbox" name="isUnchanged" #check1 [(ngModel)]="isUnchanged"> <br>
@@ -33,7 +33,7 @@
 <button (click)="setCurrentStyles()">button</button>
 <h1>
   todo list
-</h1>
+</h1> -->
 <div>
   <input type="text" #inp placeholder="enter your todo's">
   <select name="select" #select>
@@ -42,5 +42,5 @@
     <option value="low">Low</option>
   </select>
   <button (click)="add( inp.value,select.value)">add</button>
-  <p *ngFor = "let i of Array" [ngClass]="i.category">{{i.text}}</p>
+  <p *ngFor = "let i of todoArray" [ngClass]="i.category">{{i.text}}</p>
 </div> 
