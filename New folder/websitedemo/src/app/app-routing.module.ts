@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { AccessoriesComponent } from './accessories/accessories.component';
+import { AccessoriesComponent } from './services/accessories/accessories.component';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { ContactusComponent } from './contactus/contactus.component';
-import { EverythingComponent } from './everything/everything.component';
-import { HomeComponent } from './home/home.component';
-import { MenComponent } from './men/men.component';
+import { EverythingComponent } from './services/everything/everything.component';
+import { HomeComponent } from './services/home/home.component';
+import { MenComponent } from './services/men/men.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProfileComponent } from './profile/profile.component';
-import { WomenComponent } from './women/women.component';
+import { WomenComponent } from './services/women/women.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
 {
@@ -26,12 +28,24 @@ const routes: Routes = [
   component:EverythingComponent
 },
 {
+  path:'everything',
+  children:[{path:'product/:id',component:ProductDetailsComponent}],
+},
+{
   path:'women',
   component:WomenComponent
 },
 {
+  path:'women',
+  children:[{path:'product/:id',component:ProductDetailsComponent}],
+},
+{
   path:'men',
   component:MenComponent
+},
+{
+  path:'men',
+  children:[{path:'product/:id',component:ProductDetailsComponent}]
 },
 {
   path:'accessories',
@@ -53,6 +67,10 @@ const routes: Routes = [
   path:'profile',
   component:ProfileComponent
 },
+{
+  path:'home',
+  children:[{path:'#', component:HomeComponent}]
+}
 
 ];
 

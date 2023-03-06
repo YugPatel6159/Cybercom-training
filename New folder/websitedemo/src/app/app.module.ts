@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EverythingComponent } from './everything/everything.component';
-import { WomenComponent } from './women/women.component';
-import { MenComponent } from './men/men.component';
-import { AccessoriesComponent } from './accessories/accessories.component';
-import { HomeComponent } from './home/home.component';
+import { EverythingComponent } from './services/everything/everything.component';
+import { WomenComponent } from './services/women/women.component';
+import { MenComponent } from './services/men/men.component';
+import { AccessoriesComponent } from './services/accessories/accessories.component';
+import { HomeComponent } from './services/home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductComponent } from './product/product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FooterComponent } from './footer/footer.component';
     ContactusComponent,
     CartComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    ProductComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

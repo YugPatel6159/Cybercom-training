@@ -1,0 +1,2 @@
+<p>product works!</p>
+<a *ngFor = 'let i of products' [routerLink]="['product',i.id]">{{i.name}}&nbsp;{{i.price |currency:'INR'}}<br></a>
