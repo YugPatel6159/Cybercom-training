@@ -1,0 +1,9 @@
+<p>test works!</p>
+<img [src]='postImg' (click)="imgSelected.emit(postImg)">
+<p>{{title | uppercase}}</p>
+<p>{{currentDate | date:'MMMM dd'}}</p>
+<p>{{currentDate}}</p>
+<p>{{money | currency:'JPY'}}</p>
+<p>{{money | number:'1.1-2'}}</p>
+<a [routerLink]=""></a>
+<router-outlet></router-outlet>

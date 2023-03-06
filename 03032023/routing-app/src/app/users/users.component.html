@@ -1,8 +1,4 @@
 <p>users works!</p>
-    <ul>
-        <li *ngFor ="let i of users">
-            <a [routerLink]="['users', i.id]">{{i.name}}</a>
-        </li>
-    </ul>
-
-
+<div [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{exact:true}">
+    <a *ngFor ="let i of users" [routerLink]="['users', i.id]" >{{i.name}}<br></a>    
+</div>

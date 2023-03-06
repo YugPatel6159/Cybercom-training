@@ -33,12 +33,26 @@ INSERT INTO authors (name) VALUES
   ('George Orwell'),
   ('J.D. Salinger'),
   ('Jane Austen');
+  
 INSERT INTO books (title, author_id, publication_date) VALUES
   ('The Great Gatsby', 1, '1925-04-10'),
   ('To Kill a Mockingbird', 2, '1960-07-11'),
   ('1984', 3, '1949-06-08'),
   ('The Catcher in the Rye', 4, '1951-07-16'),
   ('Pride and Prejudice', 5, '1813-01-28');
+  
+SELECT 
+    a.name, GROUP_CONCAT(bc.name separator',')
+FROM
+    authors a
+        JOIN
+    books b ON a.id = b.author_id
+        JOIN
+    book_category_mapping cm ON b.id = cm.book_id
+        JOIN
+    book_categories bc ON bc.id = cm.category_id
+GROUP BY a.id;
+
 
 INSERT INTO book_categories (name) VALUES
   ('Fiction'),
@@ -102,6 +116,7 @@ books. The popularity of a book is defined as the number of
 times it has been borrowed by customers. Assume that 
 information about book borrowings is stored in a separate 
 table called book_borrowings*/
+
 create table customers (id int auto_increment primary key,
 name varchar(256) not null
 );
@@ -137,3 +152,5 @@ on b.id = bb.book_id
 group by book_id 
 order by count(book_id) 
 desc limit 5;
+
+

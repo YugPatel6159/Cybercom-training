@@ -1,0 +1,4 @@
+<input type="text" (keyup)="changeImg($event)" [value]="imgUrl">
+<app-test [img]="imgUrl" (imgSelected)="logImg($event)"></app-test>
+<p>{{title | titlecase}}</p>
+<router-outlet></router-outlet>

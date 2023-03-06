@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { HrComponent } from './hr/hr.component';
 import { LobbyComponent } from './lobby/lobby.component';
 import { ManagerComponent } from './manager/manager.component';
-import { UsersContentComponent } from './users-content/users-content.component';
+import { UsersContentComponent } from './user-content/user-content.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
